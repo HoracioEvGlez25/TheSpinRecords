@@ -54,3 +54,9 @@
   width: 100%;
   margin-top: 10px;
 }
+
+.tienda-logo {
+  width: 300px; /* Cambia el tamaño según necesites */
+  height: auto;
+  margin-bottom: 20px;
+}

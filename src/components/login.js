@@ -8,7 +8,6 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
     console.log('Login:', { email, password });
   };
 
@@ -44,5 +43,4 @@ function Login() {
   );
 }
 
-export default Login;
-
+export default Login; 

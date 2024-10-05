@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+//import logo from '../images/LogoSpinRecords.png'; // Asegúrate de que la ruta sea correcta
 
 function BoardNavigation() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a className="navbar-brand" href="#">Spin Records</a>
       <div className="collapse navbar-collapse">
         <ul className="navbar-nav mr-auto">
           <li className="nav-item">
@@ -29,3 +29,6 @@ function BoardNavigation() {
 }
 
 export default BoardNavigation;
+
+
+
