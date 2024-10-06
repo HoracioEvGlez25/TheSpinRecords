@@ -38,9 +38,6 @@ function BoardNavigation() {
             <Link className="nav-link" to="/catalog">Catálogo</Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/about">Acerca de</Link>
-          </li>
-          <li className="nav-item">
             <Link className="nav-link" to="/login">Iniciar Sesión</Link>
           </li>
           <li className="nav-item">

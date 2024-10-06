@@ -4,6 +4,7 @@ function Home() {
     return (
         <div className="App">
             <header className="App-header">
+            <p></p>
             <img src={`${process.env.PUBLIC_URL}/LogoSpinRecords.png`} alt="Logo Spin Records" 
             style={{ width: '300px', height: 'auto' }}/>
             <p></p>
