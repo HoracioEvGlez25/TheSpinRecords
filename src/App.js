@@ -1,5 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Catalog from './components/catalog';
@@ -8,8 +8,13 @@ import Login from './components/login';
 import Register from './components/register';
 import tiendaLogo from './components/images/LogoSpinRecords.png'; 
 
+
+
+
 function App() {
+
   return (
+    
     <Router>
       <div className="App">
         <BoardNavigation />
@@ -27,6 +32,11 @@ function App() {
           <Route path="/register" element={<Register />} />
         </Routes>
       </section>
+      <footer className="footer">
+    <div className="container">
+        <p className="text-muted">© 2024 Spin Records. Todos los derechos reservados.</p>
+    </div>
+</footer>
     </Router>
   );
 }
