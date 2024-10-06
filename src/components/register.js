@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+
 function Register() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
