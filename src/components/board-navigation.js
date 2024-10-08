@@ -1,3 +1,4 @@
+// BoardNavigation.js
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -24,7 +25,7 @@ function SearchBar({ onSearch }) {
   );
 }
 
-function BoardNavigation({ cartItems, removeFromCart }) { // Recibe removeFromCart como prop
+function BoardNavigation({ cartItems, removeFromCart }) {
   const [showCart, setShowCart] = useState(false);
 
   // Función para mostrar/ocultar el carrito
@@ -53,6 +54,9 @@ function BoardNavigation({ cartItems, removeFromCart }) { // Recibe removeFromCa
           </li>
           <li className="nav-item">
             <Link className="nav-link" to="/register">Registrarse</Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link" to="/profile">Perfil de Usuario</Link> {/* Enlace al perfil de usuario */}
           </li>
         </ul>
 
