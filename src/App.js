@@ -1,5 +1,6 @@
+// App.js
 import 'bootstrap/dist/css/bootstrap.min.css';
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Catalog from './components/catalog';
@@ -11,15 +12,25 @@ import About from './components/about';
 import Product from './components/products';
 
 function App() {
+  const [cartItems, setCartItems] = useState([]); // Estado para los productos del carrito
+
+  const addToCart = (product) => {
+    setCartItems((prevItems) => [...prevItems, product]); // Agrega el producto al carrito
+  };
+
+  const removeFromCart = (productId) => {
+    setCartItems((prevItems) => prevItems.filter(item => item.id !== productId)); // Filtra el producto por ID
+  };
+
   return (
     <Router>
       <div className="d-flex flex-column min-vh-100">
-        <BoardNavigation />
+        <BoardNavigation cartItems={cartItems} removeFromCart={removeFromCart} /> {/* Pasa removeFromCart a BoardNavigation */}
         <main className="flex-fill">
           <section className="container my-4">
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/catalog" element={<Catalog />} />
+              <Route path="/catalog" element={<Catalog addToCart={addToCart} />} /> {/* Pasa addToCart a Catalog */}
               <Route path="/about" element={<About />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />

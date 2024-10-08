@@ -1,8 +1,9 @@
+// Catalog
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function Catalog() {
+function Catalog({ addToCart }) { // Recibe addToCart como prop
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -25,7 +26,12 @@ function Catalog() {
                 <p className="card-text">Artista: {product.artist}</p>
                 <p className="card-text text-primary">{product.price}</p>
                 <Link to={`/product/${product.id}`} className="btn btn-primary mt-auto">Ver detalles</Link>
-                <button className="btn btn-primary mt-auto">Agregar al Carrito</button>
+                <button 
+                  className="btn btn-primary mt-auto"
+                  onClick={() => addToCart(product)} // Llama a addToCart al hacer clic
+                >
+                  Agregar al Carrito
+                </button>
               </div>
             </div>
           </div>

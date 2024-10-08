@@ -1,7 +1,6 @@
-
+// BoardNavigation
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-//import logo from '../images/LogoSpinRecords.png'; // Asegúrate de que la ruta sea correcta
 
 function SearchBar({ onSearch }) {
   const [searchTerm, setSearchTerm] = useState('');
@@ -26,7 +25,14 @@ function SearchBar({ onSearch }) {
   );
 }
 
-function BoardNavigation() {
+function BoardNavigation({ cartItems, removeFromCart }) { // Recibe removeFromCart como prop
+  const [showCart, setShowCart] = useState(false);
+
+  // Función para mostrar/ocultar el carrito
+  const toggleCart = () => {
+    setShowCart(!showCart);
+  };
+
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="collapse navbar-collapse">
@@ -47,12 +53,43 @@ function BoardNavigation() {
             <Link className="nav-link" to="/register">Registrarse</Link>
           </li>
         </ul>
+
+        {/* Botón del Carrito */}
+        <button className="btn btn-outline-light" 
+        style={{ padding: '0.25rem 0.5rem', fontSize: '0.8rem', width: '80px' }} onClick={toggleCart}>
+          Carrito ({cartItems.length})
+        </button>
       </div>
+
+      {/* Mostrar productos del carrito si `showCart` es true */}
+      {showCart && (
+        <div className="position-absolute bg-white p-3 border" style={{ right: 10, top: 60 }}>
+          <h5>Productos en el Carrito</h5>
+          {cartItems.length === 0 ? (
+            <p>El carrito está vacío.</p>
+          ) : (
+            <ul className="list-unstyled">
+              {cartItems.map((item) => (
+                <li key={item.id} className="mb-2 d-flex justify-content-between align-items-center">
+                  <div>
+                    <strong>{item.title}</strong><br />
+                    <span>{item.description}</span><br />
+                    <span className="text-muted">{item.price}</span>
+                  </div>
+                  <button 
+                    className="btn btn-danger btn-sm"
+                    onClick={() => removeFromCart(item.id)} // Llama a removeFromCart al hacer clic
+                  >
+                    Quitar
+                  </button>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+      )}
     </nav>
   );
 }
 
 export default BoardNavigation;
-
-
-
