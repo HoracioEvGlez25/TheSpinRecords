@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-function Details() {
+function DetailsTD() {
   const { id } = useParams(); 
   const [tocadisco, setProduct] = useState(null);
 
@@ -23,14 +23,14 @@ function Details() {
     <div className="container my-5">
       <h2>{tocadisco.title}</h2>
       <p>Artista: {tocadisco.artist}</p>
+      <p>Género: {tocadisco.genre}</p> {/* Muestra el género */}
       <p>Precio: {tocadisco.price}</p>
       <p>Descripción: {tocadisco.description}</p>
       <img src={tocadisco.imageUrl} alt={tocadisco.title} className="img-fluid" />
       <button className="btn btn-primary mt-auto">Agregar a lista de deseos</button>
       <button className="btn btn-primary mt-auto">Agregar al Carrito</button>
-
     </div>
   );
 }
 
-export default Details;
+export default DetailsTD;
