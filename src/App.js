@@ -4,14 +4,13 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Catalog from './components/catalog';
+import TocaDiscos from './components/tocadiscos'; // Importa el nuevo componente
 import BoardNavigation from './components/board-navigation';
 import Login from './components/login';
 import Register from './components/register';
 import Home from './components/home';
 import About from './components/about';
 import Product from './components/products';
-import TocaDiscos from './components/tocadiscos';
-import Details from './DetailsTD';
 
 function App() {
   const [cartItems, setCartItems] = useState([]); // Estado para los productos del carrito
@@ -33,12 +32,11 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/catalog" element={<Catalog addToCart={addToCart} />} /> {/* Pasa addToCart a Catalog */}
+              <Route path="/tocadiscos" element={<TocaDiscos addToCart={addToCart} />} /> {/* Pasa addToCart a TocaDiscos */}
               <Route path="/about" element={<About />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
               <Route path="/product/:id" element={<Product />} />
-              <Route path="/tocadiscos" element={<TocaDiscos />} />
-              <Route path="/detailstd/:id" element={<Details />} />
             </Routes>
           </section>
         </main>

@@ -1,8 +1,9 @@
+// TocaDiscos.js
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-function TocaDiscos() {
+function TocaDiscos({ addToCart }) { // Recibe addToCart como prop
   const [tocadiscos, setTocadiscos] = useState([]);
   const [sortOption, setSortOption] = useState('A-Z');
 
@@ -40,36 +41,35 @@ function TocaDiscos() {
 
   return (
     <div className="container my-5">
-        <h2 className="text-center mb-4">Este es el catálogo de tocadiscos</h2>
+      <h2 className="text-center mb-4">Este es el catálogo de tocadiscos</h2>
 
-        <div className="mb-4 text-center">
+      <div className="mb-4 text-center">
         <label htmlFor="sortOption" className="mr-2">Ordenar por:</label>
         <select id="sortOption" className="form-control d-inline-block w-auto" value={sortOption} onChange={handleSortChange}>
-            <option value="A-Z">Nombre (A-Z)</option>
-            <option value="Z-A">Nombre (Z-A)</option>
-            <option value="price-low-high">Precio (Menor a Mayor)</option>
-            <option value="price-high-low">Precio (Mayor a Menor)</option>
+          <option value="A-Z">Nombre (A-Z)</option>
+          <option value="Z-A">Nombre (Z-A)</option>
+          <option value="price-low-high">Precio (Menor a Mayor)</option>
+          <option value="price-high-low">Precio (Mayor a Menor)</option>
         </select>
-        </div>
+      </div>
 
-        <h2 className="text-center mb-4">Catálogo de Tocadiscos</h2>
-        <div className="row">
-            {sortedTD.map(tocadisco => (
-            <div className="col-md-4 mb-4" key={tocadisco.id}>
-                <div className="card h-100 shadow-sm">
-                <img src={tocadisco.imageUrl} className="card-img-top" alt={tocadisco.name} />
-                <div className="card-body d-flex flex-column">
-                    <h5 className="card-title">{tocadisco.name}</h5>
-                    <p className="card-text">Marca: {tocadisco.brand}</p>
-                    <p className="card-text text-primary">{tocadisco.price}</p>
-                    <p className="card-text">Tipo: {tocadisco.type}</p>
-                    <Link to={`/detailstd/${tocadisco.id}`} className="btn btn-primary mt-auto">Ver detalles</Link>
-                    <button className="btn btn-primary mt-auto">Agregar al Carrito</button>
-                </div>
-                </div>
+      <div className="row">
+        {sortedTD.map(tocadisco => (
+          <div className="col-md-4 mb-4" key={tocadisco.id}>
+            <div className="card h-100 shadow-sm">
+              <img src={tocadisco.imageUrl} className="card-img-top" alt={tocadisco.name} />
+              <div className="card-body d-flex flex-column">
+                <h5 className="card-title">{tocadisco.name}</h5>
+                <p className="card-text">Marca: {tocadisco.brand}</p>
+                <p className="card-text text-primary">{tocadisco.price}</p>
+                <p className="card-text">Tipo: {tocadisco.type}</p>
+                <Link to={`/detailstd/${tocadisco.id}`} className="btn btn-primary mt-auto">Ver detalles</Link>
+                <button className="btn btn-primary mt-auto" onClick={() => addToCart(tocadisco)}>Agregar al Carrito</button> {/* Llama a addToCart */}
+              </div>
             </div>
-            ))}
-        </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
