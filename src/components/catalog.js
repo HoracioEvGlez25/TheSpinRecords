@@ -12,7 +12,7 @@ function Catalog({ addToCart }) {
     fetch('/products.json')
       .then(response => response.json())
       .then(data => {
-        console.log(data); // Verificar que los datos se carguen correctamente
+        console.log(data); 
         setProducts(data);
       })
       .catch(error => console.error('Error al cargar productos:', error));
@@ -75,7 +75,7 @@ function Catalog({ addToCart }) {
                   <p className="card-text">Artista: {product.artist}</p>
                   <p className="card-text text-primary">{product.price}</p>
                   <p className="card-text">Género: {product.genre}</p>
-                  <Link to={`/detail/${product.id}`} className="btn btn-primary mt-auto">Ver detalles</Link>
+                  <Link to={`/product/${product.id}`} className="btn btn-primary mt-auto">Ver detalles</Link>
                   <button className="btn btn-primary mt-auto" onClick={() => addToCart(product)}>Agregar al Carrito</button>
                 </div>
               </div>

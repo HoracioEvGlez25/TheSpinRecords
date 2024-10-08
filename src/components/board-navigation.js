@@ -1,4 +1,3 @@
-// BoardNavigation
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -57,7 +56,6 @@ function BoardNavigation({ cartItems, removeFromCart }) { // Recibe removeFromCa
           </li>
         </ul>
 
-        {/* Botón del Carrito */}
         <button className="btn btn-outline-light" 
         style={{ padding: '0.25rem 0.5rem', fontSize: '0.8rem', width: '80px' }} onClick={toggleCart}>
           Carrito ({cartItems.length})
