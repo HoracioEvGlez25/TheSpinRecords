@@ -7,6 +7,8 @@ import BoardNavigation from './components/board-navigation';
 import Login from './components/login';
 import Register from './components/register';
 import Home from './components/home';
+import About from './components/about';
+import Product from './components/products';
 
 function App() {
   return (
@@ -18,8 +20,10 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/catalog" element={<Catalog />} />
+              <Route path="/about" element={<About />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
+              <Route path="/product/:id" element={<Product />} />
             </Routes>
           </section>
         </main>
