@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-function Product() {
+function Details() {
   const { id } = useParams(); 
-  const [product, setProduct] = useState(null);
+  const [tocadisco, setProduct] = useState(null);
 
   useEffect(() => {
-    fetch(`/products.json`)
+    fetch(`/TD.json`)
       .then(response => response.json())
       .then(data => {
         const foundProduct = data.find(p => p.id === parseInt(id));
@@ -15,17 +15,17 @@ function Product() {
       .catch(error => console.error('Error al cargar el producto:', error));
   }, [id]);
 
-  if (!product) {
+  if (!tocadisco) {
     return <div>Cargando detalles del producto...</div>;
   }
 
   return (
     <div className="container my-5">
-      <h2>{product.title}</h2>
-      <p>Artista: {product.artist}</p>
-      <p>Precio: {product.price}</p>
-      <p>Descripción: {product.description}</p>
-      <img src={product.imageUrl} alt={product.title} className="img-fluid" />
+      <h2>{tocadisco.title}</h2>
+      <p>Artista: {tocadisco.artist}</p>
+      <p>Precio: {tocadisco.price}</p>
+      <p>Descripción: {tocadisco.description}</p>
+      <img src={tocadisco.imageUrl} alt={tocadisco.title} className="img-fluid" />
       <button className="btn btn-primary mt-auto">Agregar a lista de deseos</button>
       <button className="btn btn-primary mt-auto">Agregar al Carrito</button>
 
@@ -33,4 +33,4 @@ function Product() {
   );
 }
 
-export default Product;
+export default Details;

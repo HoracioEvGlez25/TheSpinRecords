@@ -10,6 +10,8 @@ import Register from './components/register';
 import Home from './components/home';
 import About from './components/about';
 import Product from './components/products';
+import TocaDiscos from './components/tocadiscos';
+import Details from './DetailsTD';
 
 function App() {
   const [cartItems, setCartItems] = useState([]); // Estado para los productos del carrito
@@ -35,6 +37,8 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
               <Route path="/product/:id" element={<Product />} />
+              <Route path="/tocadiscos" element={<TocaDiscos />} />
+              <Route path="/detailstd/:id" element={<Details />} />
             </Routes>
           </section>
         </main>
