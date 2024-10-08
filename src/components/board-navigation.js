@@ -1,3 +1,4 @@
+// BoardNavigation.js
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -54,18 +55,21 @@ function BoardNavigation({ cartItems, removeFromCart }) {
             <Link className="nav-link" to="/register">Registrarse</Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/profile">Perfil de Usuario</Link> {/* Enlace al perfil de usuario */}
+            <Link className="nav-link" to="/profile">Perfil de Usuario</Link>
           </li>
         </ul>
 
-        <button className="btn btn-outline-light" 
-        style={{ padding: '0.25rem 0.5rem', fontSize: '0.8rem', width: '80px' }} onClick={toggleCart}>
+        <button 
+          className="btn btn-outline-light" 
+          style={{ padding: '0.25rem 0.5rem', fontSize: '0.8rem', width: '80px' }} 
+          onClick={toggleCart}
+        >
           Carrito ({cartItems.length})
         </button>
       </div>
 
       {showCart && (
-        <div className="position-absolute bg-white p-3 border" style={{ right: 10, top: 60 }}>
+        <div className="position-absolute bg-white p-3 border" style={{ right: 10, top: 60, zIndex: 1 }}>
           <h5>Productos en el Carrito</h5>
           {cartItems.length === 0 ? (
             <p>El carrito está vacío.</p>
@@ -74,8 +78,12 @@ function BoardNavigation({ cartItems, removeFromCart }) {
               {cartItems.map((item) => (
                 <li key={item.id} className="mb-2 d-flex justify-content-between align-items-center">
                   <div>
+                    <img 
+                      src={item.imageUrl} 
+                      alt={item.title} 
+                      style={{ width: '50px', height: '50px', objectFit: 'cover', marginRight: '10px' }} 
+                    />
                     <strong>{item.title}</strong><br />
-                    <span>{item.description}</span><br />
                     <span className="text-muted">{item.price}</span>
                   </div>
                   <button 
@@ -87,6 +95,11 @@ function BoardNavigation({ cartItems, removeFromCart }) {
                 </li>
               ))}
             </ul>
+          )}
+          {cartItems.length > 0 && (
+            <button className="btn btn-primary btn-block mt-3">
+              Realizar Compra
+            </button>
           )}
         </div>
       )}

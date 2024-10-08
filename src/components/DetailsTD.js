@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-function DetailsTD() {
+function DetailsTD({ addToCart }) {
   const { id } = useParams(); 
   const [tocadisco, setProduct] = useState(null);
+  const [tocadiscos, setTocadiscos] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
     fetch('/TD.json')
@@ -28,7 +30,8 @@ function DetailsTD() {
       <p>Descripción: {tocadisco.description}</p>
       <img src={tocadisco.imageUrl} alt={tocadisco.title} className="img-fluid" />
       <button className="btn btn-primary mt-auto">Agregar a lista de deseos</button>
-      <button className="btn btn-primary mt-auto">Agregar al Carrito</button>
+      <button className="btn btn-primary mt-auto"
+      onClick={() => addToCart(product)}>Agregar al Carrito</button>
     </div>
   );
 }

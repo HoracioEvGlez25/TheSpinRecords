@@ -1,3 +1,4 @@
+// Catalog.js
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -54,7 +55,12 @@ function Catalog({ addToCart }) {
       <div className="mb-4 text-center">
         <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
         <label htmlFor="sortOption" className="mr-2">Ordenar por:</label>
-        <select id="sortOption" className="form-control d-inline-block w-auto" value={sortOption} onChange={handleSortChange}>
+        <select
+          id="sortOption"
+          className="form-control d-inline-block w-auto"
+          value={sortOption}
+          onChange={handleSortChange}
+        >
           <option value="A-Z">Nombre (A-Z)</option>
           <option value="Z-A">Nombre (Z-A)</option>
           <option value="price-low-high">Precio (Menor a Mayor)</option>
@@ -76,7 +82,12 @@ function Catalog({ addToCart }) {
                   <p className="card-text text-primary">{product.price}</p>
                   <p className="card-text">Género: {product.genre}</p>
                   <Link to={`/product/${product.id}`} className="btn btn-primary mt-auto">Ver detalles</Link>
-                  <button className="btn btn-primary mt-auto" onClick={() => addToCart(product)}>Agregar al Carrito</button>
+                  <button
+                    className="btn btn-secondary mt-2"
+                    onClick={() => addToCart(product)}
+                  >
+                    Agregar al Carrito
+                  </button>
                 </div>
               </div>
             </div>

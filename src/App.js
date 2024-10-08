@@ -15,14 +15,23 @@ import UserProfile from './components/UserProfile';
 import DetailsTD from './components/DetailsTD';
 
 function App() {
-  const [cartItems, setCartItems] = useState([]); // Estado para los productos del carrito
+  const [cartItems, setCartItems] = useState([]); 
 
   const addToCart = (product) => {
-    setCartItems((prevItems) => [...prevItems, product]); // Agrega el producto al carrito
+    setCartItems((prevCart) => {
+      const existingProduct = prevCart.find((item) => item.id === product.id);
+      if (existingProduct) {
+        return prevCart.map((item) =>
+          item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+        );
+      }
+      return [...prevCart, { ...product, quantity: 1 }];
+    });
+    alert(`${product.title} ha sido agregado al carrito!`);
   };
 
   const removeFromCart = (productId) => {
-    setCartItems((prevItems) => prevItems.filter(item => item.id !== productId)); // Filtra el producto por ID
+    setCartItems((prevItems) => prevItems.filter(item => item.id !== productId)); 
   };
 
   return (

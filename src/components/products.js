@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import SearchBar from './SearchBar'; // Importa el componente SearchBar
+import SearchBar from './SearchBar'; 
 
-function Product() {
+function Product({ addToCart }) { 
   const { id } = useParams(); 
   const [product, setProduct] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
-    fetch(`/products.json`)
+    fetch('/products.json')
       .then(response => response.json())
       .then(data => {
         const foundProduct = data.find(p => p.id === parseInt(id));
@@ -29,8 +29,12 @@ function Product() {
       <p>Precio: {product.price}</p>
       <p>Descripción: {product.description}</p>
       <img src={product.imageUrl} alt={product.title} className="img-fluid" />
-      <button className="btn btn-primary mt-auto">Agregar a lista de deseos</button>
-      <button className="btn btn-primary mt-auto">Agregar al Carrito</button>
+      <button 
+        className="btn btn-primary mt-3" 
+        onClick={() => addToCart(product)} // Llama a addToCart al hacer clic
+      >
+        Agregar al Carrito
+      </button>
     </div>
   );
 }
