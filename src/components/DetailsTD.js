@@ -6,7 +6,7 @@ function DetailsTD() {
   const [tocadisco, setProduct] = useState(null);
 
   useEffect(() => {
-    fetch(`/TD.json`)
+    fetch('/TD.json')
       .then(response => response.json())
       .then(data => {
         const foundProduct = data.find(p => p.id === parseInt(id));

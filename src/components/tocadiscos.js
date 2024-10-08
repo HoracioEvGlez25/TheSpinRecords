@@ -73,7 +73,7 @@ function TocaDiscos({ addToCart }) {
                   <p className="card-text">Marca: {tocadisco.brand}</p>
                   <p className="card-text text-primary">{tocadisco.price}</p>
                   <p className="card-text">Tipo: {tocadisco.type}</p>
-                  <Link to={`/detailstd/${tocadisco.id}`} className="btn btn-primary mt-auto">Ver detalles</Link>
+                  <Link to={`/DetailsTD/${tocadisco.id}`} className="btn btn-primary mt-auto">Ver detalles</Link>
                   <button className="btn btn-primary mt-auto" onClick={() => addToCart(tocadisco)}>Agregar al Carrito</button>
                 </div>
               </div>

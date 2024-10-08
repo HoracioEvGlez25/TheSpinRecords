@@ -10,9 +10,9 @@ import Login from './components/login';
 import Register from './components/register';
 import Home from './components/home';
 import About from './components/about';
-import Product from './components/products';
+import Product from './components/products';  
 import UserProfile from './components/UserProfile';
- // Importa el nuevo componente de perfil de usuario
+import DetailsTD from './components/DetailsTD';
 
 function App() {
   const [cartItems, setCartItems] = useState([]); // Estado para los productos del carrito
@@ -39,6 +39,7 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
               <Route path="/product/:id" element={<Product />} />
+              <Route path="/DetailsTD/:id" element={<DetailsTD />} />
               <Route path="/profile" element={<UserProfile />} />
             </Routes>
           </section>

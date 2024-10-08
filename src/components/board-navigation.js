@@ -28,7 +28,6 @@ function SearchBar({ onSearch }) {
 function BoardNavigation({ cartItems, removeFromCart }) {
   const [showCart, setShowCart] = useState(false);
 
-  // Función para mostrar/ocultar el carrito
   const toggleCart = () => {
     setShowCart(!showCart);
   };
@@ -66,7 +65,6 @@ function BoardNavigation({ cartItems, removeFromCart }) {
         </button>
       </div>
 
-      {/* Mostrar productos del carrito si `showCart` es true */}
       {showCart && (
         <div className="position-absolute bg-white p-3 border" style={{ right: 10, top: 60 }}>
           <h5>Productos en el Carrito</h5>
@@ -83,7 +81,7 @@ function BoardNavigation({ cartItems, removeFromCart }) {
                   </div>
                   <button 
                     className="btn btn-danger btn-sm"
-                    onClick={() => removeFromCart(item.id)} // Llama a removeFromCart al hacer clic
+                    onClick={() => removeFromCart(item.id)} 
                   >
                     Quitar
                   </button>
