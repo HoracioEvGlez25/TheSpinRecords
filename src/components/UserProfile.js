@@ -8,25 +8,23 @@ const UserProfile = () => {
     email: 'pipo69@example.com',
     phone: '123-456-7890',
     address: 'Calle Falsa 123, Ciudad Ficticia, País Imaginario',
-    profileImage: 'https://i0.wp.com/www.otero.uy/wp-content/uploads/2023/03/fotos-para-perfil-de-linkedin-hombre-2.jpg?fit=1080%2C1080&ssl=1', // URL de imagen de perfil
-    orders: [
-
-    ]
+    profileImage: '/qqqqqqq.jpg', 
+    orders: []
   };
 
   return (
-    <Container>
+    <Container className="my-5">
       <Row className="justify-content-md-center">
-        <Col md="6">
-          <Card className="mt-4">
-            <Card.Header as="h5">Perfil de Usuario</Card.Header>
+        <Col md="8">
+          <Card className="mt-4 shadow-lg border-light">
+            <Card.Header as="h5" className="text-center bg-primary text-white">Perfil de Usuario</Card.Header>
             <Card.Body>
-              <Row>
-                <Col md="4">
-                  <Image src={user.profileImage} roundedCircle fluid />
+              <Row className="align-items-center">
+                <Col md="4" className="text-center">
+                  <Image src={user.profileImage} roundedCircle fluid className="border border-secondary" />
                 </Col>
                 <Col md="8">
-                  <Card.Title>{user.name}</Card.Title>
+                  <Card.Title className="text-primary">{user.name}</Card.Title>
                   <Card.Text>
                     <strong>Email:</strong> {user.email}
                   </Card.Text>
@@ -45,24 +43,32 @@ const UserProfile = () => {
       </Row>
       <Row className="justify-content-md-center mt-4">
         <Col md="8">
-          <h4>Pedidos Recientes</h4>
-          {user.orders.map((order, index) => (
-            <Card className="mb-3" key={index}>
-              <Card.Header>Pedido #{order.id}</Card.Header>
-              <ListGroup className="list-group-flush">
-                <ListGroupItem><strong>Fecha:</strong> {order.date}</ListGroupItem>
-                <ListGroupItem><strong>Total:</strong> ${order.total}</ListGroupItem>
-                <ListGroupItem>
-                  <strong>Artículos:</strong>
-                  <ul>
-                    {order.items.map((item, idx) => (
-                      <li key={idx}>{item.name} - ${item.price}</li>
-                    ))}
-                  </ul>
-                </ListGroupItem>
-              </ListGroup>
+          <h4 className="text-center mb-4">Pedidos Recientes</h4>
+          {user.orders.length === 0 ? (
+            <Card className="mb-3 text-center">
+              <Card.Body>
+                <Card.Text>No hay pedidos recientes.</Card.Text>
+              </Card.Body>
             </Card>
-          ))}
+          ) : (
+            user.orders.map((order, index) => (
+              <Card className="mb-3" key={index}>
+                <Card.Header className="bg-light">Pedido #{order.id}</Card.Header>
+                <ListGroup className="list-group-flush">
+                  <ListGroupItem><strong>Fecha:</strong> {order.date}</ListGroupItem>
+                  <ListGroupItem><strong>Total:</strong> ${order.total}</ListGroupItem>
+                  <ListGroupItem>
+                    <strong>Artículos:</strong>
+                    <ul>
+                      {order.items.map((item, idx) => (
+                        <li key={idx}>{item.name} - ${item.price}</li>
+                      ))}
+                    </ul>
+                  </ListGroupItem>
+                </ListGroup>
+              </Card>
+            ))
+          )}
         </Col>
       </Row>
     </Container>

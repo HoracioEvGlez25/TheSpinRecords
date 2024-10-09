@@ -1,10 +1,9 @@
-// Catalog.js
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SearchBar from './SearchBar';
 
-function Catalog({ addToCart }) {
+function Catalog({ addToCart, addToWishlist }) {
   const [products, setProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [sortOption, setSortOption] = useState('A-Z');
@@ -87,6 +86,12 @@ function Catalog({ addToCart }) {
                     onClick={() => addToCart(product)}
                   >
                     Agregar al Carrito
+                  </button>
+                  <button
+                    className="btn btn-outline-danger mt-2"
+                    onClick={() => addToWishlist(product)}
+                  >
+                    Agregar a Wishlist
                   </button>
                 </div>
               </div>

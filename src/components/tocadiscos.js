@@ -1,16 +1,20 @@
-// TocaDiscos.js
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import SearchBar from './SearchBar';
 
-function TocaDiscos({ addToCart }) { // Recibe addToCart como prop
+function TocaDiscos({ addToCart, addToWishlist }) {
   const [tocadiscos, setTocadiscos] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
   const [sortOption, setSortOption] = useState('A-Z');
 
   useEffect(() => {
     fetch('/TD.json')
       .then(response => response.json())
-      .then(data => setTocadiscos(data))
+      .then(data => {
+        console.log(data);
+        setTocadiscos(data);
+      })
       .catch(error => console.error('Error al cargar tocadiscos:', error));
   }, []);
 
@@ -37,13 +41,18 @@ function TocaDiscos({ addToCart }) { // Recibe addToCart como prop
     setSortOption(e.target.value);
   };
 
-  const sortedTD = sortTD(tocadiscos, sortOption);
+  const filteredProducts = tocadiscos.filter(tocadisco => 
+    tocadisco.name?.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const sortedTD = sortTD(filteredProducts, sortOption);
 
   return (
     <div className="container my-5">
       <h2 className="text-center mb-4">Este es el catálogo de tocadiscos</h2>
 
       <div className="mb-4 text-center">
+        <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
         <label htmlFor="sortOption" className="mr-2">Ordenar por:</label>
         <select id="sortOption" className="form-control d-inline-block w-auto" value={sortOption} onChange={handleSortChange}>
           <option value="A-Z">Nombre (A-Z)</option>
@@ -53,6 +62,9 @@ function TocaDiscos({ addToCart }) { // Recibe addToCart como prop
         </select>
       </div>
 
+      {sortedTD.length === 0 ? (
+        <div className="text-center">No se encontraron resultados.</div>
+      ) : (
       <div className="row">
         {sortedTD.map(tocadisco => (
           <div className="col-md-4 mb-4" key={tocadisco.id}>
@@ -64,12 +76,24 @@ function TocaDiscos({ addToCart }) { // Recibe addToCart como prop
                 <p className="card-text text-primary">{tocadisco.price}</p>
                 <p className="card-text">Tipo: {tocadisco.type}</p>
                 <Link to={`/detailstd/${tocadisco.id}`} className="btn btn-primary mt-auto">Ver detalles</Link>
-                <button className="btn btn-primary mt-auto" onClick={() => addToCart(tocadisco)}>Agregar al Carrito</button> {/* Llama a addToCart */}
+                <button 
+                  className="btn btn-primary mt-auto" 
+                  onClick={() => addToCart(tocadisco)}
+                  >
+                    Agregar al Carrito
+                </button>
+                <button
+                  className="btn btn-outline-danger mt-2"
+                  onClick={() => addToWishlist(tocadisco)}
+                >
+                  Agregar a Wishlist
+                </button>
               </div>
             </div>
           </div>
         ))}
       </div>
+      )}
     </div>
   );
 }

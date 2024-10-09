@@ -1,4 +1,3 @@
-// ShoppingCart.js
 import React from "react";
 import { Card, Button, Container, Row, Col, Form } from "react-bootstrap";
 import { FaCcVisa, FaCcMastercard, FaCcStripe, FaPaypal, FaUniversity } from "react-icons/fa";
