@@ -91,7 +91,7 @@ function App() {
             <div className="text-center">
               <p className="mb-1">© 2024 Spin Records. Todos los derechos reservados 2024.</p>
               <p>Síguenos en nuestras redes sociales:</p>
-              <a href="#" className="text-light me-3">Facebook</a>
+              <a href="#" className="text-light me-3">Facebook.</a>
               <a href="#" className="text-light me-3">Twitter</a>
               <a href="##########" className="text-light">Instagram</a>
             </div>
