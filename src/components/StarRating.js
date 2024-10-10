@@ -13,7 +13,7 @@ const StarRating = ({ rating, onRatingChange }) => {
             name="rating" 
             value={star} 
             onClick={() => onRatingChange(star)} 
-            style={{ display: 'none' }} // Hide the default radio button
+            style={{ display: 'none' }} 
           />
           <FaStar 
             className="star" 
