@@ -93,7 +93,7 @@ function App() {
               <p>Síguenos en nuestras redes sociales:</p>
               <a href="#" className="text-light me-3">Facebook.</a>
               <a href="#" className="text-light me-3">Twitter.</a>
-              <a href="##########" className="text-light">Instagram</a>
+              <a href="##########" className="text-light">Instagram...</a>
             </div>
           </div>
         </footer>
