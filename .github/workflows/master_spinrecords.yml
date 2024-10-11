@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy Node.js app to Azure Web App - SpinRecords
+name: Build and deploy Node.js app to Azure Web App - spinrecords
 
 on:
   push:
@@ -19,7 +19,7 @@ jobs:
       - name: Set up Node.js version
         uses: actions/setup-node@v3
         with:
-          node-version: '18.x'
+          node-version: '20.x'
 
       - name: npm install, build, and test
         run: |
@@ -57,15 +57,15 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_BFEED835370C407F9B6E84AAF1974466 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_735C7BBE70C04A1586B72B4F6E9EBB72 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_1BBB5A56BDE740EBB0537639977821BD }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_89852D26CBAC4CD5B25EE7BC06F5CAC3 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_F521634EFD094B7BAD2B4D112E1C5EC4 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_5D4B12F0C8F44CD295E48DF9448E445A }}
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'SpinRecords'
+          app-name: 'spinrecords'
           slot-name: 'Production'
           package: .
           
