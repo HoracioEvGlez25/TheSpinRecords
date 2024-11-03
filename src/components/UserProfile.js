@@ -8,7 +8,7 @@ const UserProfile = () => {
     email: 'pipo69@example.com',
     phone: '123-456-7890',
     address: 'Calle Falsa 123, Ciudad Ficticia, País Imaginario',
-    profileImage: '/qqqqqqq.jpg', 
+    profileImage: '/SF.jpg', 
     orders: []
   };
 

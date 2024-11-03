@@ -27,7 +27,7 @@ function ShoppingCart({ cartItems, removeFromCart, updateQuantity }) {
                   <Col md={8}>
                     <Card.Body>
                       <Card.Title>{item.title}</Card.Title>
-                      <Card.Text>Precio: ${item.price.toFixed(2)}</Card.Text>
+                      <Card.Text>Precio: {item.price.toFixed(2)}</Card.Text>
                       <Card.Text>
                         Cantidad:
                         <Form.Control

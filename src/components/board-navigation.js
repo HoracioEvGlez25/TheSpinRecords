@@ -1,156 +1,103 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import SearchBar from './SearchBar';
 
-function BoardNavigation({ cartItems, removeFromCart }) {
-  const [showCart, setShowCart] = useState(false);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [products, setProducts] = useState([]);
-  const [turntables, setTurntables] = useState([]);
-  const [filteredResults, setFilteredResults] = useState([]);
+function BoardNavigation({ cartItems }) {
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   const toggleCart = () => {
-    setShowCart(!showCart);
-  };
-
-  useEffect(() => {
-    const fetchProducts = async () => {
-      const response = await fetch('/path/to/product.json');
-      const data = await response.json();
-      setProducts(data);
-    };
-
-    const fetchTurntables = async () => {
-      const response = await fetch('/path/to/td.json');
-      const data = await response.json();
-      setTurntables(data);
-    };
-
-    fetchProducts();
-    fetchTurntables();
-  }, []);
-
-  const handleSearch = (term) => {
-    setSearchTerm(term);
-    const allItems = [...products, ...turntables];
-    const results = allItems.filter(item =>
-      item.title?.toLowerCase().includes(term.toLowerCase()) ||
-      item.name?.toLowerCase().includes(term.toLowerCase())
-    );
-    setFilteredResults(results);
+    setIsCartOpen(!isCartOpen);
   };
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div className="container-fluid">
-        <Link className="navbar-brand" to="/">Spin Records</Link>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded={showCart ? "true" : "false"}
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-
-        <div className="collapse navbar-collapse" id="navbarNav">
-        <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-
-          <ul className="navbar-nav me-auto">
-            <li className="nav-item">
-              <Link className="nav-link" to="/">Home</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/catalog">Catálogo</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/tocadiscos">Tocadiscos</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/about">About</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/wishlist">Wishlist</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/login">Iniciar Sesión</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/register">Registrarse</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/profile">Perfil de Usuario</Link>
-            </li>
-          </ul>
-
-          <button 
-            className="btn btn-outline-light" 
-            style={{ padding: '0.25rem 0.5rem', fontSize: '0.8rem', width: '80px' }} 
-            onClick={toggleCart}
-          >
-            Carrito ({cartItems.length})
-          </button>
-        </div>
+    <nav style={{
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: '#343a40',
+      padding: '30px'
+    }}>
+      <div style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        gap: '30px'
+      }}>
+        <Link to="/" style={{ color: 'white', textDecoration: 'none', fontSize: '18px', fontWeight: 'bold' }}>
+          Spin Records
+        </Link>
+        <Link to="/" style={{ color: 'white', textDecoration: 'none', fontSize: '16px' }}>
+          Inicio
+        </Link>
+        <Link to="/catalog" style={{ color: 'white', textDecoration: 'none', fontSize: '16px' }}>
+          Catálogo
+        </Link>
+        <Link to="/wishlist" style={{ color: 'white', textDecoration: 'none', fontSize: '16px' }}>
+          Lista de Deseos
+        </Link>
+        <Link to="/about" style={{ color: 'white', textDecoration: 'none', fontSize: '16px' }}>
+          Sobre Nosotros
+        </Link>
+        <Link to="/login" style={{ color: 'white', textDecoration: 'none', fontSize: '16px' }}>
+          Iniciar Sesión
+        </Link>
+        <Link to="/register" style={{ color: 'white', textDecoration: 'none', fontSize: '16px' }}>
+          Registrarse
+        </Link>
+        <Link to="/profile" style={{ color: 'white', textDecoration: 'none', fontSize: '16px' }}>
+          Perfil del Usuario
+        </Link>
+        <span onClick={toggleCart} style={{ color: 'white', cursor: 'pointer', fontSize: '16px' }}>
+          Carrito ({cartItems.length})
+        </span>
       </div>
 
-      {showCart && (
-        <div className="position-absolute bg-white p-3 border" style={{ right: 10, top: 60, zIndex: 1, width: '300px' }}>
-          <h5>Productos en el Carrito</h5>
-          {cartItems.length === 0 ? (
-            <p>El carrito está vacío.</p>
-          ) : (
-            <ul className="list-unstyled">
+      {isCartOpen && (
+        <div style={{
+          position: 'fixed',
+          top: '20%',
+          right: '20%',
+          width: '300px',
+          backgroundColor: 'white',
+          borderRadius: '8px',
+          boxShadow: '0px 4px 8px rgba(0, 0, 0, 0.2)',
+          padding: '20px',
+          zIndex: 1000,
+        }}>
+          <h3>Carrito de Compras</h3>
+          {cartItems.length > 0 ? (
+            <ul style={{ listStyle: 'none', padding: 0 }}>
               {cartItems.map((item) => (
-                <li key={item.id} className="mb-2 d-flex justify-content-between align-items-center">
-                  <div className="d-flex align-items-center">
-                    <img 
-                      src={item.imageUrl} 
-                      alt={item.title} 
-                      style={{ width: '50px', height: '50px', objectFit: 'cover', marginRight: '10px' }} 
-                    />
-                    <strong>{item.title}</strong>
-                    <span className="text-muted ms-2">${item.price}</span>
-                  </div>
-                  <button 
-                    className="btn btn-danger btn-sm"
-                    onClick={() => removeFromCart(item.id)} 
-                  >
-                    Quitar
-                  </button>
+                <li key={item.id} style={{ marginBottom: '10px' }}>
+                  {item.title} - Cantidad: {item.quantity}
                 </li>
               ))}
             </ul>
+          ) : (
+            <p>El carrito está vacío</p>
           )}
-          {cartItems.length > 0 && (
-            <button className="btn btn-primary btn-block mt-3">
-              Realizar Compra
-            </button>
-          )}
+          <button onClick={toggleCart} style={{
+            marginTop: '10px',
+            padding: '8px 16px',
+            backgroundColor: '#343a40',
+            color: 'white',
+            border: 'none',
+            borderRadius: '4px',
+            cursor: 'pointer',
+          }}>
+            Cerrar
+          </button>
         </div>
       )}
-
-      {searchTerm && filteredResults.length > 0 && (
-        <div className="position-absolute bg-white p-3 border" style={{ right: 5, top: 150, zIndex: 1, width: '20px' }}>
-          <h5>Resultados de búsqueda</h5>
-          <ul className="list-unstyled">
-            {filteredResults.map(item => (
-              <li key={item.id} className="mb-2">
-                <div className="d-flex align-items-center">
-                  <img 
-                    src={item.imageUrl} 
-                    alt={item.title || item.name} 
-                    style={{ width: '50px', height: '50px', objectFit: 'cover', marginRight: '10px' }} 
-                  />
-                  <strong>{item.title || item.name}</strong>
-                  <span className="text-muted ms-2">${item.price}</span>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
+      {isCartOpen && (
+        <div style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          backgroundColor: 'rgba(0, 0, 0, 0.5)',
+          zIndex: 999,
+        }} onClick={toggleCart}></div>
       )}
     </nav>
   );
