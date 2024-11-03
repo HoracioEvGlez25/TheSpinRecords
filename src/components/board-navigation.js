@@ -29,7 +29,10 @@ function BoardNavigation({ cartItems }) {
           Inicio
         </Link>
         <Link to="/catalog" style={{ color: 'white', textDecoration: 'none', fontSize: '16px' }}>
-          Catálogo
+          Vinilos
+        </Link>
+        <Link to="/TocaDiscos" style={{ color: 'white', textDecoration: 'none', fontSize: '16px' }}>
+          TocaDiscos
         </Link>
         <Link to="/wishlist" style={{ color: 'white', textDecoration: 'none', fontSize: '16px' }}>
           Lista de Deseos
