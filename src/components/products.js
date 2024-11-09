@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import SearchBar from './SearchBar'; 
 import { Container, Row, Col, Card, Button, Image } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import StarRating from './StarRating';
@@ -8,8 +7,25 @@ import StarRating from './StarRating';
 function Product({ addToCart, addToWishlist }) { 
   const { id } = useParams(); 
   const [product, setProduct] = useState(null);
-  const [searchTerm, setSearchTerm] = useState('');
   const [rating, setRating] = useState(0);
+
+  const reviews = [
+    {
+      user: "Carlos M.",
+      comment: "Excelente calidad de sonido y muy bien empaquetado. Lo recomiendo ampliamente.",
+      rating: 5
+    },
+    {
+      user: "Ana R.",
+      comment: "El disco llegó en perfectas condiciones y suena genial. La selección de canciones es perfecta.",
+      rating: 4
+    },
+    {
+      user: "Jorge L.",
+      comment: "Un clásico que nunca decepciona. La calidad del vinilo es muy buena, aunque llegó un poco tarde.",
+      rating: 4
+    }
+  ];
 
   useEffect(() => {
     fetch('/products.json')
@@ -27,7 +43,6 @@ function Product({ addToCart, addToWishlist }) {
 
   return (
     <Container className="my-5">
-      <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       <Row className="align-items-center">
         <Col md="6" className="text-center">
           <Image src={product.imageUrl} alt={product.title} className="img-fluid rounded" />
@@ -61,6 +76,22 @@ function Product({ addToCart, addToWishlist }) {
               </div>
             </Card.Body>
           </Card>
+        </Col>
+      </Row>
+
+      {/* Reviews Section */}
+      <Row className="mt-5">
+        <Col>
+          <h3>Reseñas</h3>
+          {reviews.map((review, index) => (
+            <Card key={index} className="mb-3">
+              <Card.Body>
+                <Card.Title>{review.user}</Card.Title>
+                <StarRating rating={review.rating} />
+                <Card.Text>{review.comment}</Card.Text>
+              </Card.Body>
+            </Card>
+          ))}
         </Col>
       </Row>
     </Container>

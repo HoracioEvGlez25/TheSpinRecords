@@ -3,15 +3,16 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #2e5173 !important;
   min-height: 70vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #FFFFFF;
 }
+
 
 .catalog {
   padding: 20px;
@@ -41,7 +42,7 @@
   max-width: 400px;
   margin: 20px auto;
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: #fffcfc;
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
@@ -95,7 +96,7 @@
 .user-profile button {
   width: 100%;
   padding: 10px;
-  background-color: #007bff;
+  background-color: #2e5173;
   color: white;
   border: none;
   border-radius: 5px;

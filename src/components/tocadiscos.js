@@ -49,7 +49,21 @@ function TocaDiscos({ addToCart, addToWishlist }) {
 
   return (
     <div className="container my-5">
-      <h2 className="text-center mb-4">Este es el catálogo de tocadiscos</h2>
+          <h2
+  className="text-center mb-4 font-bold text-transparent text-4xl"
+  style={{
+    background: "linear-gradient(90deg, #ff7e5f, #feb47b)",
+    WebkitBackgroundClip: "text",
+    backgroundClip: "text",
+    textShadow: "2px 2px 5px rgba(0, 0, 0, 0.2)",
+    transition: "transform 0.3s ease",
+    cursor: "pointer",
+  }}
+     onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
+     onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
+>
+      🎶 Nuestro Catálogo de Tocadiscos 🎶
+     </h2>
 
       <div className="mb-4 text-center">
         <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
@@ -76,6 +90,7 @@ function TocaDiscos({ addToCart, addToWishlist }) {
                 <p className="card-text text-primary">{tocadisco.price}</p>
                 <p className="card-text">Tipo: {tocadisco.type}</p>
                 <Link to={`/detailstd/${tocadisco.id}`} className="btn btn-primary mt-auto">Ver detalles</Link>
+                <p></p>
                 <button 
                   className="btn btn-primary mt-auto" 
                   onClick={() => addToCart(tocadisco)}

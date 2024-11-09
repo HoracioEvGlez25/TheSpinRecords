@@ -4,8 +4,8 @@
     "title": "Modern Life is Rubbish",
     "artist": "Blur",
     "description": "El segundo álbum de estudio de Blur, lanzado en 1993, marcó el comienzo del sonido Britpop que definiría su carrera. Con influencias del rock británico de los años 60, este álbum es una crítica al estilo de vida moderno. Canciones destacadas incluyen 'Coping' y 'Popscene'.",
-    "imageUrl": "/MLisR.jpg",
-    "price": "$200.00",
+    "imageUrl": "/MLIRRR.jpg",
+    "price": "200.00",
     "genre": "Britpop"
   },
   {
@@ -14,7 +14,7 @@
     "artist": "Arctic Monkeys",
     "description": "Lanzado en 2009, 'Humbug' es el tercer álbum de Arctic Monkeys y muestra un sonido más oscuro y psicodélico. Producido por Josh Homme de Queens of the Stone Age, el álbum incluye éxitos como 'Crying Lightning' y 'Cornerstone'.",
     "imageUrl": "/Humbug.jpg",
-    "price": "$250.00",
+    "price": "250.00",
     "genre": "Rock"
   },
   {
@@ -22,8 +22,8 @@
     "title": "Blur",
     "artist": "Blur",
     "description": "El álbum homónimo de Blur, lanzado en 1997, presentó un sonido más crudo y experimental, alejándose del Britpop que los había hecho famosos. Incluye su emblemático sencillo 'Song 2', conocido por su energía y su famoso grito 'Woo-hoo!'.",
-    "imageUrl": "/B.jpg",
-    "price": "$300.00",
+    "imageUrl": "/BC.jpg",
+    "price": "300.00",
     "genre": "Alternative"
   },
   {
@@ -31,17 +31,17 @@
     "title": "Gorillaz",
     "artist": "Gorillaz",
     "description": "Este es el álbum debut de la banda virtual Gorillaz, lanzado en 2001. Mezcla géneros como el hip hop, rock y electrónica, con éxitos como 'Clint Eastwood' y '19-2000'. La banda fue creada por Damon Albarn de Blur y el artista Jamie Hewlett.",
-    "imageUrl": "/GG.jpg",
-    "price": "$300.00",
+    "imageUrl": "/G.jpg",
+    "price": "300.00",
     "genre": "Hip Hop"
   },
   {
     "id": 5,
     "title": "The New Abnormal",
     "artist": "The Strokes",
-    "description": "Lanzado en 2020, 'The New Abnormal' es el sexto álbum de estudio de The Strokes. Ganador del Grammy al Mejor Álbum de Rock, incluye canciones como 'At the Door' y 'Bad Decisions', destacando por su sonido melódico y nostálgico.",
-    "imageUrl": "/TNA.png",
-    "price": "$300.00",
+    "description": "Lanzado en 2020, 'The New Abnormal' es el sexto álbum de estudio de The Strokes. Ganador del Grammy al Mejor Álbum de Rock, incluye canciones como 'At the Door' y 'Ode to the mets', destacando por su sonido melódico y nostálgico.",
+    "imageUrl": "/TNAA.jpg",
+    "price": "300.00",
     "genre": "Rock"
   },
   {
@@ -49,8 +49,8 @@
     "title": "Favourite Worst Nightmare",
     "artist": "Arctic Monkeys",
     "description": "El segundo álbum de Arctic Monkeys, lanzado en 2007, presenta un sonido más maduro y agresivo que su debut. Destacan canciones como 'Brianstorm' y 'Fluorescent Adolescent', mostrando su capacidad para mezclar energía punk con melodías pegajosas.",
-    "imageUrl": "/FWNN.jpg",
-    "price": "$300.00",
+    "imageUrl": "/FWNMM.jpg",
+    "price": "300.00",
     "genre": "Rock"
   }
 ]

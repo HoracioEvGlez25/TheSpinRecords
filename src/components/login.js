@@ -35,16 +35,11 @@ function Login() {
             required
           />
         </div>
-        <div className="form-group">
-          <label>Confirmar contraseña</label>
-          <input
-            type="password"
-            className="form-control"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-          />
-        </div>
+
+        <button type="submit" className="btn btn-link">
+        ¿Olvidaste tu contraseña?
+        </button>
+
         <button type="submit" className="btn btn-primary">
           Iniciar Sesión
         </button>

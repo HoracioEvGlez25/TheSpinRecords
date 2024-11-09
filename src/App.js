@@ -12,6 +12,7 @@ import About from './components/about';
 import Product from './components/products';  
 import UserProfile from './components/UserProfile';
 import DetailsTD from './components/DetailsTD';
+import PurchaseOrder from './components/PurchaseOrder'; 
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
@@ -61,6 +62,7 @@ function App() {
               <Route path="/product/:id" element={<Product />} />
               <Route path="/DetailsTD/:id" element={<DetailsTD />} />
               <Route path="/profile" element={<UserProfile />} />
+              <Route path="/PurchaseOrder" element={<PurchaseOrder carrito={cartItems} onConfirmarCompra={() => alert('Compra Confirmada!')} descuento={10} />} />
             </Routes>
           </section>
         </main>
@@ -78,7 +80,6 @@ function App() {
                   <li><a href="/catalog" className="text-light">Catálogo</a></li>
                   <li><a href="/wishlist" className="text-light">Lista de Deseos</a></li>
                   <li><a href="/about" className="text-light">Sobre Nosotros</a></li>
-                  <li><a href="/contact" className="text-light">Contacto</a></li>
                 </ul>
               </div>
               <div className="col-md-4 mb-3">

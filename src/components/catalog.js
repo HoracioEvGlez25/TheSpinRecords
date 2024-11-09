@@ -49,8 +49,22 @@ function Catalog({ addToCart, addToWishlist }) {
 
   return (
     <div className="container my-5">
-      <h2 className="text-center mb-4">Catálogo de Productos</h2>
-
+     <h2
+  className="text-center mb-4 font-bold text-transparent text-4xl"
+  style={{
+    background: "linear-gradient(90deg, #ff7e5f, #feb47b)",
+    WebkitBackgroundClip: "text",
+    backgroundClip: "text",
+    textShadow: "2px 2px 5px rgba(0, 0, 0, 0.2)",
+    transition: "transform 0.3s ease",
+    cursor: "pointer",
+  }}
+     onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.05)")}
+     onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
+>
+      🎶 Nuestro Catálogo de Vinilos 🎶
+     </h2>
+     
       <div className="mb-4 text-center">
         <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
         <label htmlFor="sortOption" className="mr-2">Ordenar por:</label>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FaShoppingCart } from 'react-icons/fa'; 
 
 function BoardNavigation({ cartItems }) {
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -13,7 +14,7 @@ function BoardNavigation({ cartItems }) {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: '#343a40',
+      backgroundColor: '#2e5173',
       padding: '30px'
     }}>
       <div style={{
@@ -37,9 +38,6 @@ function BoardNavigation({ cartItems }) {
         <Link to="/wishlist" style={{ color: 'white', textDecoration: 'none', fontSize: '16px' }}>
           Lista de Deseos
         </Link>
-        <Link to="/about" style={{ color: 'white', textDecoration: 'none', fontSize: '16px' }}>
-          Sobre Nosotros
-        </Link>
         <Link to="/login" style={{ color: 'white', textDecoration: 'none', fontSize: '16px' }}>
           Iniciar Sesión
         </Link>
@@ -49,7 +47,8 @@ function BoardNavigation({ cartItems }) {
         <Link to="/profile" style={{ color: 'white', textDecoration: 'none', fontSize: '16px' }}>
           Perfil del Usuario
         </Link>
-        <span onClick={toggleCart} style={{ color: 'white', cursor: 'pointer', fontSize: '16px' }}>
+        <span onClick={toggleCart} style={{ color: 'white', cursor: 'pointer', fontSize: '16px', display: 'flex', alignItems: 'center' }}>
+          <FaShoppingCart style={{ marginRight: '8px' }} /> {/* Ícono del carrito */}
           Carrito ({cartItems.length})
         </span>
       </div>
@@ -88,6 +87,20 @@ function BoardNavigation({ cartItems }) {
             cursor: 'pointer',
           }}>
             Cerrar
+          </button>
+          <button onClick={toggleCart} style={{
+            marginLeft: '5px',
+            marginTop: '10px',
+            padding: '8px 16px',
+            backgroundColor: '#343a40',
+            color: 'white',
+            border: 'none',
+            borderRadius: '4px',
+            cursor: 'pointer',
+          }}>
+            <Link to="/PurchaseOrder" style={{ color: 'white', textDecoration: 'none', fontSize: '16px' }}>
+              Completar compra
+            </Link>
           </button>
         </div>
       )}
