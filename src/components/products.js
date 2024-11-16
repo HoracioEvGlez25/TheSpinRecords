@@ -7,6 +7,7 @@ import StarRating from './StarRating';
 function Product({ addToCart, addToWishlist }) { 
   const { id } = useParams(); 
   const [product, setProduct] = useState(null);
+  const [relatedProducts, setRelatedProducts] = useState([]);
   const [rating, setRating] = useState(0);
 
   const reviews = [
@@ -28,11 +29,23 @@ function Product({ addToCart, addToWishlist }) {
   ];
 
   useEffect(() => {
+    
     fetch('/products.json')
-      .then(response => response.json())
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Error al cargar el archivo JSON.');
+        }
+        return response.json();
+      })
       .then(data => {
         const foundProduct = data.find(p => p.id === parseInt(id));
         setProduct(foundProduct);
+
+        if (foundProduct) {
+          
+          const recommendations = data.filter(p => p.genre === foundProduct.genre && p.id !== foundProduct.id);
+          setRelatedProducts(recommendations);
+        }
       })
       .catch(error => console.error('Error al cargar el producto:', error));
   }, [id]);
@@ -79,10 +92,9 @@ function Product({ addToCart, addToWishlist }) {
         </Col>
       </Row>
 
-      {/* Reviews Section */}
       <Row className="mt-5">
         <Col>
-          <h3>Reseñas</h3>
+          <h2>Reseñas</h2>
           {reviews.map((review, index) => (
             <Card key={index} className="mb-3">
               <Card.Body>
@@ -92,6 +104,40 @@ function Product({ addToCart, addToWishlist }) {
               </Card.Body>
             </Card>
           ))}
+        </Col>
+      </Row>
+
+      <Row className="mt-5">
+        <Col>
+          <h4>Te podría interesar</h4>
+          <Row>
+            {relatedProducts.length > 0 ? (
+              relatedProducts.map(related => (
+                <Col md="4" key={related.id} className="mb-4">
+                  <Card>
+                    <Card.Img variant="top" src={related.imageUrl} alt={related.title} />
+                    <Card.Body>
+                      <Card.Title>{related.title}</Card.Title>
+                      <Card.Text>
+                        <strong>Artista:</strong> {related.artist}
+                      </Card.Text>
+                      <Card.Text>
+                        <strong>Precio:</strong> ${related.price}
+                      </Card.Text>
+                      <Button 
+                        variant="primary" 
+                        size="sm" 
+                        onClick={() => window.location.href = `/product/${related.id}`}>
+                        Ver detalles
+                      </Button>
+                    </Card.Body>
+                  </Card>
+                </Col>
+              ))
+            ) : (
+              <p>No hay productos relacionados disponibles.</p>
+            )}
+          </Row>
         </Col>
       </Row>
     </Container>

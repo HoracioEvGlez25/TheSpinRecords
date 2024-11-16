@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 import './App.css';
 import Catalog from './components/catalog';
 import Wishlist from './components/wishlist';  
@@ -68,6 +69,13 @@ function App() {
         </main>
         <footer className="footer bg-dark text-light text-center text-md-left mt-4">
           <div className="container py-4">
+            <div className="text-center mb-4">
+              <img 
+                src="/LogoSpinRecords.png" 
+                alt="Logo Spin Records" 
+                style={{ width: '100px', height: 'auto' }} 
+              />
+            </div>
             <div className="row">
               <div className="col-md-4 mb-3">
                 <h5 className="text-uppercase">Acerca de</h5>
@@ -90,12 +98,18 @@ function App() {
             </div>
             <hr className="bg-light" />
             <div className="text-center">
-              <p className="mb-1">© 2024 Spin Records. Todos los derechos reservados 2024.</p>
-              <p>Síguenos en nuestras redes sociales:</p>
-              <a href="#" className="text-light me-3">Facebook.</a>
-              <a href="#" className="text-light me-3">Twitter.</a>
-              <a href="##########" className="text-light">Instagram...</a>
-            </div>
+             <p className="mb-1">© 2024 Spin Records. Todos los derechos reservados 2024.</p>
+             <p>Síguenos en nuestras redes sociales:</p>
+             <a href="#" className="text-light me-3">
+             <FaFacebook size={24} />
+             </a>
+             <a href="#" className="text-light me-3">
+             <FaTwitter size={24} />
+             </a>
+             <a href="#" className="text-light">
+             <FaInstagram size={24} />
+             </a>
+           </div>
           </div>
         </footer>
       </div>
