@@ -19,7 +19,7 @@ function Product({ addToCart, addToWishlist }) {
     {
       user: "Ana R.",
       comment: "El disco llegó en perfectas condiciones y suena genial. La selección de canciones es perfecta.",
-      rating: 4
+      rating: 5
     },
     {
       user: "Jorge L.",

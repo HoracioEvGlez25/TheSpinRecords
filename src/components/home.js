@@ -132,6 +132,35 @@ function Home() {
                 </div>
             </section>
 
+            <section>
+                <div className="row justify-content-center">
+                    <div className="col-md-4 mb-4">
+                        <div className="card shadow-sm">
+                            <div className="card-body text-center">
+                                <h5 className="card-title">3 meses sin intereses</h5>
+                                <p className="card-text">En compras superiores a $999 válido en Paypal</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-md-4 mb-4">
+                        <div className="card shadow-sm">
+                            <div className="card-body text-center">
+                                <h5 className="card-title">Todos los medios de pago</h5>
+                                <p className="card-text">OXXO • Mercado Pago • PayPal • Tarjetas de crédito/débito • Kueski Pay y Aplazo</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-md-4 mb-4">
+                        <div className="card shadow-sm">
+                            <div className="card-body text-center">
+                                <h5 className="card-title">Devoluciones Gratuitas</h5>
+                                <p className="card-text">Tienes 10 días naturales para hacer un cambio o devolución. Aplican restricciones</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <section className="mb-5">
                 <h2 className="text-center mb-4">Lo que dicen nuestros clientes</h2>
                 <div className="row justify-content-center">

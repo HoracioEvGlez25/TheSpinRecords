@@ -69,13 +69,6 @@ function App() {
         </main>
         <footer className="footer bg-dark text-light text-center text-md-left mt-4">
           <div className="container py-4">
-            <div className="text-center mb-4">
-              <img 
-                src="/LogoSpinRecords.png" 
-                alt="Logo Spin Records" 
-                style={{ width: '100px', height: 'auto' }} 
-              />
-            </div>
             <div className="row">
               <div className="col-md-4 mb-3">
                 <h5 className="text-uppercase">Acerca de</h5>
@@ -95,6 +88,13 @@ function App() {
                 <p>Si tienes preguntas, no dudes en enviarnos un correo electrónico:</p>
                 <a href="mailto:spinrecords@gmail.com" className="text-light">spinrecords@gmail.com</a>
               </div>
+            </div>
+            <div className="text-center mb-4">
+              <img 
+                src="/LogoSpinRecords.png" 
+                alt="Logo Spin Records" 
+                style={{ width: '150px', height: 'auto' }} 
+              />
             </div>
             <hr className="bg-light" />
             <div className="text-center">
