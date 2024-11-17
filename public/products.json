@@ -5,7 +5,7 @@
     "artist": "Blur",
     "description": "El segundo álbum de estudio de Blur, lanzado en 1993, marcó el comienzo del sonido Britpop que definiría su carrera. Con influencias del rock británico de los años 60, este álbum es una crítica al estilo de vida moderno. Canciones destacadas incluyen 'Coping' y 'Popscene'.",
     "imageUrl": "/MLIRRR.jpg",
-    "price": "200.00",
+    "price": "280.00",
     "genre": "Britpop"
   },
   {
@@ -14,7 +14,7 @@
     "artist": "Arctic Monkeys",
     "description": "Lanzado en 2009, 'Humbug' es el tercer álbum de Arctic Monkeys y muestra un sonido más oscuro y psicodélico. Producido por Josh Homme de Queens of the Stone Age, el álbum incluye éxitos como 'Crying Lightning' y 'Cornerstone'.",
     "imageUrl": "/Humbug.jpg",
-    "price": "250.00",
+    "price": "280.00",
     "genre": "Rock"
   },
   {
@@ -50,7 +50,61 @@
     "artist": "Arctic Monkeys",
     "description": "El segundo álbum de Arctic Monkeys, lanzado en 2007, presenta un sonido más maduro y agresivo que su debut. Destacan canciones como 'Brianstorm' y 'Fluorescent Adolescent', mostrando su capacidad para mezclar energía punk con melodías pegajosas.",
     "imageUrl": "/FWNMM.jpg",
-    "price": "300.00",
+    "price": "320.00",
     "genre": "Rock"
+  },
+  {
+    "id": 7,
+    "title": "Revolver",
+    "artist": "The Beatles",
+    "description": "Lanzado en 1966, 'Revolver' es uno de los álbumes más innovadores de The Beatles, explorando técnicas de grabación avanzadas y letras introspectivas. Incluye clásicos como 'Eleanor Rigby' y 'Tomorrow Never Knows'.",
+    "imageUrl": "/rev.jpg",
+    "price": "340.00",
+    "genre": "Rock"
+  },
+  {
+    "id": 8,
+    "title": "Ten",
+    "artist": "Pearl Jam",
+    "description": "El álbum debut de Pearl Jam, lanzado en 1991, ayudó a definir el sonido grunge de los 90. Destacan canciones como 'Alive', 'Even Flow' y 'Black', marcando el comienzo de una legendaria carrera musical.",
+    "imageUrl": "/black.jpeg",
+    "price": "300.00",
+    "genre": "Grunge"
+  },
+  {
+    "id": 9,
+    "title": "Black Sabbath",
+    "artist": "Black Sabbath",
+    "description": "Lanzado en 1970, este álbum debut de Black Sabbath es considerado el inicio del heavy metal. Con canciones como 'Black Sabbath' y 'The Wizard', el disco marcó un antes y un después en la historia del rock.",
+    "imageUrl": "/black sabbath.jpg",
+    "price": "300.00",
+    "genre": "Heavy Metal"
+  },
+  {
+    "id": 10,
+    "title": "Romance",
+    "artist": "Fontaines D.C.",
+    "description": "Lanzado en 2024, 'Romance' combina letras poéticas y un sonido post-punk característico. Canciones como 'Starbuster', o 'Desire' destacan la evolución de la banda hacia un estilo más melódico.",
+    "imageUrl": "/Romance.jpg",
+    "price": "350.00",
+    "genre": "Post-Punk"
+  },
+  {
+    "id": 11,
+    "title": "13",
+    "artist": "Blur",
+    "description": "Lanzado en 1999, '13' es un álbum introspectivo y experimental de Blur que aborda temas personales. Canciones como 'Tender' y 'Coffee & TV' destacan por sus arreglos y profundidad emocional.",
+    "imageUrl": "/1333.jpg",
+    "price": "300.00",
+    "genre": "Alternative"
+  },
+  {
+    "id": 12,
+    "title": "OK Computer",
+    "artist": "Radiohead",
+    "description": "Lanzado en 1997, 'OK Computer' es uno de los álbumes más aclamados de Radiohead, explorando temas como el aislamiento tecnológico y la alienación moderna. Incluye éxitos como 'Paranoid Android' y 'Karma Police'.",
+    "imageUrl": "/OKC.jpg",
+    "price": "350.00",
+    "genre": "Alternative"
   }
 ]

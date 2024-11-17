@@ -45,7 +45,7 @@ function Home() {
                             <img src="/BC.jpg" className="card-img-top" alt="Producto 1" style={{ height: '250px', objectFit: 'cover' }} />
                             <div className="card-body text-center">
                                 <h5 className="card-title">Blur</h5>
-                                <p className="card-text">"El álbum homónimo de Blur, lanzado en 1997, presentó un sonido más crudo y experimental, alejándose del Britpop que los había hecho famosos. Incluye 'Song 2', conocido por su energía y su famoso grito 'Woo-hoo!', asi como Beetlebum la mejor canción de la historia."</p>
+                                <p className="card-text">El álbum homónimo de Blur, lanzado en 1997, presentó un sonido más crudo y experimental, alejándose del Britpop que los había hecho famosos. Incluye 'Song 2', conocido por su energía y su famoso grito 'Woo-hoo!', asi como Beetlebum la mejor canción de la historia.</p>
                                 <p className="text-primary font-weight-bold">$300.00</p>
                                 <button className="btn btn-primary">Agregar al Carrito</button>
                             </div>
@@ -76,6 +76,47 @@ function Home() {
                 </div>
             </section>
 
+            <section style={{ backgroundColor: 'black', color: 'white', padding: '20px' }}>
+    <h2 className="text-center mb-4" style={{ color: '#FFD700', fontSize: '2.5rem', fontWeight: 'bold', textShadow: '2px 2px 5px #000' }}>
+        Nuevos Productos
+    </h2>
+    <div className="row justify-content-center">
+        <div className="col-md-4 mb-4">
+            <div className="card shadow-sm" style={{ backgroundColor: '#1a1a1a', color: 'white' }}>
+                <img src="/Romance.jpg" className="card-img-top" alt="Producto 1" style={{ height: '250px', objectFit: 'cover' }} />
+                <div className="card-body text-center">
+                    <h5 className="card-title" style={{ color: '#FFD700' }}>Romance</h5>
+                    <p className="card-text">Lanzado en 2024, 'Romance' combina letras poéticas y un sonido post-punk característico. Canciones como 'Starbuster', o 'Desire' destacan la evolución de la banda hacia un estilo más melódico.</p>
+                    <p className="text-primary font-weight-bold" style={{ color: '#00FF00' }}>$350.00</p>
+                    <button className="btn btn-primary">Agregar al Carrito</button>
+                </div>
+            </div>
+        </div>
+        <div className="col-md-4 mb-4">
+            <div className="card shadow-sm" style={{ backgroundColor: '#1a1a1a', color: 'white' }}>
+                <img src="/OKC.jpg" className="card-img-top" alt="Producto 2" style={{ height: '250px', objectFit: 'cover' }} />
+                <div className="card-body text-center">
+                    <h5 className="card-title" style={{ color: '#FFD700' }}>OK Computer</h5>
+                    <p className="card-text">Lanzado en 1997, 'OK Computer' es uno de los álbumes más aclamados de Radiohead, explorando temas como el aislamiento tecnológico y la alienación moderna. Incluye éxitos como 'Paranoid Android' y 'Karma Police'</p>
+                    <p className="text-primary font-weight-bold" style={{ color: '#00FF00' }}>$350.00</p>
+                    <button className="btn btn-primary">Agregar al Carrito</button>
+                </div>
+            </div>
+        </div>
+        <div className="col-md-4 mb-4">
+            <div className="card shadow-sm" style={{ backgroundColor: '#1a1a1a', color: 'white' }}>
+                <img src="/black sabbath.jpg" className="card-img-top" alt="Producto 3" style={{ height: '250px', objectFit: 'cover' }} />
+                <div className="card-body text-center">
+                    <h5 className="card-title" style={{ color: '#FFD700' }}>Black Sabbath</h5>
+                    <p className="card-text">Lanzado en 1970, este álbum debut de Black Sabbath es considerado el inicio del heavy metal. Con canciones como 'Black Sabbath' y 'The Wizard', el disco marcó un antes y un después en la historia del rock.</p>
+                    <p className="text-primary font-weight-bold" style={{ color: '#00FF00' }}>$300.00</p>
+                    <button className="btn btn-primary">Agregar al Carrito</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<p></p>
             <section>
                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                     <h2
@@ -138,14 +179,14 @@ function Home() {
                         <div className="card shadow-sm">
                             <div className="card-body text-center">
                                 <h5 className="card-title">3 meses sin intereses</h5>
-                                <p className="card-text">En compras superiores a $999 válido en Paypal</p>
+                                <p className="card-text">En compras superiores a $599 válido en Paypal</p>
                             </div>
                         </div>
                     </div>
                     <div className="col-md-4 mb-4">
                         <div className="card shadow-sm">
                             <div className="card-body text-center">
-                                <h5 className="card-title">Todos los medios de pago</h5>
+                                <h5 className="card-title"> Medios de pago</h5>
                                 <p className="card-text">OXXO • Mercado Pago • PayPal • Tarjetas de crédito/débito • Kueski Pay y Aplazo</p>
                             </div>
                         </div>
