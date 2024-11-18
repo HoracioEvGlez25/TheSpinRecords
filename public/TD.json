@@ -22,6 +22,30 @@
       "price": "$1500",
       "type": "Semi-automático",
       "imageUrl": "/TTTT.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Tocadiscos Moderno",
+      "brand": "Technics",
+      "price": "$1800",
+      "type": "Automático",
+      "imageUrl": "/TDM.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Tocadiscos Moderno",
+      "brand": "Technics",
+      "price": "$1500",
+      "type": "Semi-automático",
+      "imageUrl": "/TDSA.png"
+    },
+    {
+      "id": 6,
+      "name": "Tocadiscos Moderno",
+      "brand": "Technics",
+      "price": "$1340",
+      "type": "Manual",
+      "imageUrl": "/TDA.jpg"
     }
   ]
   

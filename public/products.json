@@ -6,7 +6,7 @@
     "description": "El segundo álbum de estudio de Blur, lanzado en 1993, marcó el comienzo del sonido Britpop que definiría su carrera. Con influencias del rock británico de los años 60, este álbum es una crítica al estilo de vida moderno. Canciones destacadas incluyen 'Coping' y 'Popscene'.",
     "imageUrl": "/MLIRRR.jpg",
     "price": "280.00",
-    "genre": "Britpop"
+    "genre": "Alternative"
   },
   {
     "id": 2,
@@ -33,7 +33,7 @@
     "description": "Este es el álbum debut de la banda virtual Gorillaz, lanzado en 2001. Mezcla géneros como el hip hop, rock y electrónica, con éxitos como 'Clint Eastwood' y '19-2000'. La banda fue creada por Damon Albarn de Blur y el artista Jamie Hewlett.",
     "imageUrl": "/G.jpg",
     "price": "300.00",
-    "genre": "Hip Hop"
+    "genre": "Alternative"
   },
   {
     "id": 5,
@@ -69,7 +69,7 @@
     "description": "El álbum debut de Pearl Jam, lanzado en 1991, ayudó a definir el sonido grunge de los 90. Destacan canciones como 'Alive', 'Even Flow' y 'Black', marcando el comienzo de una legendaria carrera musical.",
     "imageUrl": "/black.jpeg",
     "price": "300.00",
-    "genre": "Grunge"
+    "genre": "Grunge, Rock"
   },
   {
     "id": 9,

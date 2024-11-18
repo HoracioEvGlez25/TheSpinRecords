@@ -81,6 +81,15 @@ function Catalog({ addToCart, addToWishlist }) {
         </select>
       </div>
 
+      <div className="my-4">
+        <img 
+          src="/VBackG.jpg" 
+          alt="Imagen destacada del catálogo" 
+          className="img-fluid rounded shadow" 
+          style={{ width: '100%', maxHeight: '400px', objectFit: 'cover' }} 
+        />
+      </div>
+
       {sortedProducts.length === 0 ? (
         <div className="text-center">No se encontraron resultados.</div>
       ) : (
