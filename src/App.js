@@ -67,51 +67,108 @@ function App() {
             </Routes>
           </section>
         </main>
-        <footer className="footer bg-dark text-light text-center text-md-left mt-4">
-          <div className="container py-4">
-            <div className="row">
-              <div className="col-md-4 mb-3">
-                <h5 className="text-uppercase">Acerca de</h5>
-                <p>Spin Records es tu tienda de discos en línea, donde puedes encontrar los mejores vinilos de todos los géneros.</p>
-              </div>
-              <div className="col-md-4 mb-3">
-                <h5 className="text-uppercase">Enlaces Rápidos</h5>
-                <ul className="list-unstyled">
-                  <li><a href="/" className="text-light">Inicio</a></li>
-                  <li><a href="/catalog" className="text-light">Catálogo</a></li>
-                  <li><a href="/wishlist" className="text-light">Lista de Deseos</a></li>
-                  <li><a href="/about" className="text-light">Sobre Nosotros</a></li>
-                </ul>
-              </div>
-              <div className="col-md-4 mb-3">
-                <h5 className="text-uppercase">Contáctanos</h5>
-                <p>Si tienes preguntas, no dudes en enviarnos un correo electrónico:</p>
-                <a href="mailto:spinrecords@gmail.com" className="text-light">spinrecords@gmail.com</a>
-              </div>
-            </div>
-            <div className="text-center mb-4">
-              <img 
-                src="/LogoSpinRecords.png" 
-                alt="Logo Spin Records" 
-                style={{ width: '150px', height: 'auto' }} 
-              />
-            </div>
-            <hr className="bg-light" />
-            <div className="text-center">
-             <p className="mb-1">© 2024 Spin Records. Todos los derechos reservados 2024.</p>
-             <p>Síguenos en nuestras redes sociales:</p>
-             <a href="#" className="text-light me-3">
-             <FaFacebook size={24} />
-             </a>
-             <a href="#" className="text-light me-3">
-             <FaTwitter size={24} />
-             </a>
-             <a href="#" className="text-light">
-             <FaInstagram size={24} />
-             </a>
-           </div>
-          </div>
-        </footer>
+        <footer 
+  className="footer" 
+  style={{ 
+    backgroundColor: '#212529', 
+    color: '#f8f9fa', 
+    textAlign: 'center', 
+    padding: '2rem 1rem', 
+    boxShadow: '0 -4px 10px rgba(0, 0, 0, 0.5)', 
+    fontFamily: "'Poppins', sans-serif" 
+  }}
+>
+  <div className="container">
+    <div className="row">
+      <div 
+        className="col-md-4 mb-3" 
+        style={{ 
+          padding: '1rem', 
+          borderRadius: '8px', 
+          background: 'rgba(255, 255, 255, 0.1)', 
+          transition: 'transform 0.3s ease-in-out' 
+        }}
+        onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
+        onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
+      >
+        <h5 className="text-uppercase" style={{ borderBottom: '2px solid #ffc107', paddingBottom: '0.5rem' }}>
+          Acerca de
+        </h5>
+        <p>Spin Records es tu tienda de discos en línea, donde puedes encontrar los mejores vinilos de todos los géneros.</p>
+      </div>
+      <div 
+        className="col-md-4 mb-3" 
+        style={{ 
+          padding: '1rem', 
+          borderRadius: '8px', 
+          background: 'rgba(255, 255, 255, 0.1)', 
+          transition: 'transform 0.3s ease-in-out' 
+        }}
+        onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
+        onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
+      >
+        <h5 className="text-uppercase" style={{ borderBottom: '2px solid #ffc107', paddingBottom: '0.5rem' }}>
+          Enlaces Rápidos
+        </h5>
+        <ul className="list-unstyled">
+          <li><a href="/" className="text-light" style={{ textDecoration: 'none' }}>Inicio</a></li>
+          <li><a href="/catalog" className="text-light" style={{ textDecoration: 'none' }}>Catálogo</a></li>
+          <li><a href="/wishlist" className="text-light" style={{ textDecoration: 'none' }}>Lista de Deseos</a></li>
+          <li><a href="/about" className="text-light" style={{ textDecoration: 'none' }}>Sobre Nosotros</a></li>
+        </ul>
+      </div>
+      <div 
+        className="col-md-4 mb-3" 
+        style={{ 
+          padding: '1rem', 
+          borderRadius: '8px', 
+          background: 'rgba(255, 255, 255, 0.1)', 
+          transition: 'transform 0.3s ease-in-out' 
+        }}
+        onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
+        onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
+      >
+        <h5 className="text-uppercase" style={{ borderBottom: '2px solid #ffc107', paddingBottom: '0.5rem' }}>
+          Contáctanos
+        </h5>
+        <p>Si tienes preguntas, no dudes en enviarnos un correo electrónico:</p>
+        <a href="mailto:spinrecords@gmail.com" className="text-light" style={{ fontWeight: 'bold', textDecoration: 'underline' }}>
+          spinrecords@gmail.com
+        </a>
+      </div>
+    </div>
+    <div className="text-center mb-4">
+      <img 
+        src="/LogoSpinRecords.png" 
+        alt="Logo Spin Records" 
+        style={{ 
+          width: '150px', 
+          height: 'auto', 
+          margin: '1rem 0', 
+          transition: 'transform 0.3s ease-in-out' 
+        }}
+        onMouseOver={(e) => e.currentTarget.style.transform = 'rotate(10deg)'}
+        onMouseOut={(e) => e.currentTarget.style.transform = 'rotate(0deg)'}
+      />
+    </div>
+    <hr style={{ borderTop: '1px solid #ffc107' }} />
+    <div className="text-center">
+      <p className="mb-1">© 2024 Spin Records. Todos los derechos reservados.</p>
+      <p>Síguenos en nuestras redes sociales:</p>
+      <div>
+        <a href="#" className="text-light me-3" style={{ transition: 'color 0.3s', color: '#f8f9fa' }} onMouseOver={(e) => e.currentTarget.style.color = '#1877f2'} onMouseOut={(e) => e.currentTarget.style.color = '#f8f9fa'}>
+          <FaFacebook size={24} />
+        </a>
+        <a href="#" className="text-light me-3" style={{ transition: 'color 0.3s', color: '#f8f9fa' }} onMouseOver={(e) => e.currentTarget.style.color = '#1da1f2'} onMouseOut={(e) => e.currentTarget.style.color = '#f8f9fa'}>
+          <FaTwitter size={24} />
+        </a>
+        <a href="#" className="text-light" style={{ transition: 'color 0.3s', color: '#f8f9fa' }} onMouseOver={(e) => e.currentTarget.style.color = '#c13584'} onMouseOut={(e) => e.currentTarget.style.color = '#f8f9fa'}>
+          <FaInstagram size={24} />
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
       </div>
     </Router>
   );

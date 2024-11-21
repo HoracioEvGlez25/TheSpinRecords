@@ -26,9 +26,6 @@ function BoardNavigation({ cartItems }) {
         <Link to="/" style={{ color: 'white', textDecoration: 'none', fontSize: '18px', fontWeight: 'bold' }}>
           Spin Records
         </Link>
-        <Link to="/" style={{ color: 'white', textDecoration: 'none', fontSize: '16px' }}>
-          Inicio
-        </Link>
         <Link to="/catalog" style={{ color: 'white', textDecoration: 'none', fontSize: '16px' }}>
           Vinilos
         </Link>

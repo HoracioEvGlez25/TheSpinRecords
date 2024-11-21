@@ -130,7 +130,7 @@
         }}
     >
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginBottom: '30px' }}>
-          <h2 style={{ color: 'white' }}>Promociones</h2>
+          <h2 style={{ color: 'white' }}>PROMOCIONES</h2>
         </div>
 
         <div className="row justify-content-center">
