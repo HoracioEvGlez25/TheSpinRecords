@@ -23,9 +23,34 @@ function BoardNavigation({ cartItems }) {
         alignItems: 'center',
         gap: '30px'
       }}>
-        <Link to="/" style={{ color: 'white', textDecoration: 'none', fontSize: '18px', fontWeight: 'bold' }}>
-          Spin Records
-        </Link>
+           <Link 
+           to="/" 
+           style={{ 
+           color: 'white', 
+           textDecoration: 'none', 
+           fontSize: '18px', 
+           fontWeight: 'bold', 
+           display: 'flex', 
+           alignItems: 'center', 
+           gap: '10px' 
+       }}
+        >
+<img 
+  src="/LogoSpinRecords.png" 
+  alt="Logo de Spin Records" 
+  style={{
+    width: '50px',
+    height: '50px',
+    objectFit: 'cover',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.3)', 
+    borderRadius: '10px', 
+    border: '2px solid #171a4a', 
+    filter: 'contrast(110%) brightness(95%)', 
+    transition: 'transform 0.3s, box-shadow 0.3s', 
+  }} 
+/>
+        Spin Records
+       </Link>
         <Link to="/catalog" style={{ color: 'white', textDecoration: 'none', fontSize: '16px' }}>
           Vinilos
         </Link>

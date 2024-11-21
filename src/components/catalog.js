@@ -134,7 +134,7 @@ function Catalog({ addToCart, addToWishlist }) {
                   style={{
                     borderRadius: '15px 15px 0 0',
                     objectFit: 'cover',
-                    height: '200px',
+                    height: '350px', 
                   }}
                 />
                 <div className="card-body d-flex flex-column">
