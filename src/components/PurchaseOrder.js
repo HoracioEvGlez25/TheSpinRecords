@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import StripeCheckout from 'react-stripe-checkout';
 
 const PurchaseOrder = ({ carrito = [], onConfirmarCompra, descuento = 0 }) => {
   const [productos, setProductos] = useState([]);
@@ -36,6 +37,33 @@ const PurchaseOrder = ({ carrito = [], onConfirmarCompra, descuento = 0 }) => {
     setImpuestos(nuevosImpuestos);
     setTotalFinal(nuevoTotalFinal);
   }, [carritoActualizado, productos, descuento]);
+
+  const manejarPagoStripe = (token) => {
+    console.log('Pago simulado con Stripe:', token);
+    alert('Pago realizado con éxito mediante Stripe. ¡Gracias por tu compra!');
+  };
+
+  useEffect(() => {
+    if (window.paypal) {
+      window.paypal.Buttons({
+        createOrder: function (data, actions) {
+          return actions.order.create({
+            purchase_units: [{
+              amount: {
+                value: totalFinal.toFixed(2)
+              }
+            }]
+          });
+        },
+        onApprove: function (data, actions) {
+          return actions.order.capture().then(function (details) {
+            alert('¡Pago exitoso con PayPal!');
+            window.location.href = "catalogo.php";
+          });
+        }
+      }).render('#paypal-button-container');
+    }
+  }, [totalFinal]);
 
   return (
     <div style={styles.purchaseOrder}>
@@ -84,12 +112,32 @@ const PurchaseOrder = ({ carrito = [], onConfirmarCompra, descuento = 0 }) => {
               <h4>Impuestos (10%): ${impuestos.toFixed(2)}</h4>
               <h3>Total Final: ${totalFinal.toFixed(2)}</h3>
             </div>
-            <button style={styles.confirmButton} onClick={onConfirmarCompra}>
-              Confirmar Compra
-            </button>
+          </div>
+
+          <div style={styles.paymentSection}>
+            <div style={styles.paymentMethod}>
+              <StripeCheckout
+                stripeKey="sk_test_51QOOtG07A4BQnDKN9WfndfGqAuAPw6aqp3J2rfRMMQ8GwjpRU3PhCxJeqdMOAngT2N9RHNoxJ3zZUt5Rzr6g4iiC00OKM8Y9EN"
+                token={manejarPagoStripe}
+                amount={Math.round(totalFinal * 100)}
+                name="Tienda de Vinilos"
+                description={`Total Final: $${totalFinal.toFixed(2)}`}
+                currency="MXN"
+              >
+                <button style={styles.stripeButton}>
+                  <img
+                    src="/s.png"
+                    alt="Stripe Logo"
+                    style={styles.logo}
+                  />
+                  Pagar con Stripe
+                </button>
+              </StripeCheckout>
+            </div>
           </div>
         </div>
       )}
+      
     </div>
   );
 };
@@ -153,24 +201,44 @@ const styles = {
     border: '1px solid #ddd',
   },
   totalSection: {
-    display: 'flex',
-    justifyContent: 'space-between',
     marginTop: '30px',
     borderTop: '1px solid #ddd',
     paddingTop: '20px',
   },
-  confirmButton: {
-    padding: '12px 30px',
-    backgroundColor: '#28a745',
-    color: '#fff',
-    border: 'none',
+  paymentSection: {
+    marginTop: '30px',
+    textAlign: 'center',
+  },
+  paymentTitle: {
+    fontSize: '20px',
+    fontWeight: 'bold',
+    marginBottom: '20px',
+  },
+  paymentMethod: {
+    marginBottom: '20px',
+  },
+  stripeButton: {
+    display: 'flex',
+    alignItems: 'center',
+    padding: '10px 20px',
+    backgroundColor: '#635BFF',
     borderRadius: '5px',
+    color: '#fff',
+    fontWeight: 'bold',
     cursor: 'pointer',
-    fontSize: '16px',
-    alignSelf: 'flex-end',
-    transition: 'background-color 0.3s ease',
+    gap: '10px',
+    textAlign: 'center',
+  },
+  logo: {
+    height: '20px',
+  },
+  paypalLogo: {
+    marginTop: '10px',
+  },
+  logo: {
+    height: '20px',
+    marginRight: '10px',
   },
 };
 
 export default PurchaseOrder;
-

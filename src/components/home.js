@@ -250,7 +250,7 @@
                             <div className="card shadow-sm">
                                 <div className="card-body text-center">
                                     <h5 className="card-title"> Medios de pago</h5>
-                                    <p className="card-text">OXXO • Mercado Pago • PayPal • Tarjetas de crédito/débito • Kueski Pay y Aplazo</p>
+                                    <p className="card-text">• Stripe • PayPal • Tarjetas de crédito/débito • Aplazo</p>
                                 </div>
                             </div>
                         </div>
@@ -265,27 +265,106 @@
                     </div>
                 </section>
 
-                <section className="mb-5">
-                    <h2 className="text-center mb-4">Lo que dicen nuestros clientes</h2>
-                    <div className="row justify-content-center">
-                        <div className="col-md-4 mb-4">
-                            <div className="card shadow-sm">
-                                <div className="card-body text-center">
-                                    <p className="card-text">"Gran calidad de productos y servicio, siempre mi tienda favorita para encontrar vinilos raros."</p>
-                                    <footer className="blockquote-footer">Juan Pérez</footer>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-4 mb-4">
-                            <div className="card shadow-sm">
-                                <div className="card-body text-center">
-                                    <p className="card-text">"Me encanta la variedad que tienen, siempre encuentro algo que me gusta. ¡Muy recomendado!"</p>
-                                    <footer className="blockquote-footer">María García</footer>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                <section
+    className="mb-5 py-5"
+    style={{
+        background: "linear-gradient(135deg, #f0f8ff, #e6f7ff)",
+        borderRadius: "10px",
+        padding: "50px 20px",
+    }}
+>
+    <h2
+        className="text-center mb-4"
+        style={{
+            color: "#007bff",
+            fontWeight: "bold",
+            fontFamily: "'Roboto', sans-serif",
+            letterSpacing: "1px",
+        }}
+    >
+        Lo que dicen nuestros clientes
+    </h2>
+    <div className="row justify-content-center">
+        <div className="col-md-4 mb-4">
+            <div
+                className="card border-0 shadow-lg h-100"
+                style={{
+                    transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                    borderRadius: "8px",
+                }}
+                onMouseOver={(e) => {
+                    e.currentTarget.style.transform = "scale(1.05)";
+                    e.currentTarget.style.boxShadow =
+                        "0 8px 20px rgba(0, 0, 0, 0.2)";
+                }}
+                onMouseOut={(e) => {
+                    e.currentTarget.style.transform = "scale(1)";
+                    e.currentTarget.style.boxShadow =
+                        "0 4px 10px rgba(0, 0, 0, 0.1)";
+                }}
+            >
+                <div className="card-body text-center" style={{ padding: "30px 20px" }}>
+                    <p
+                        className="card-text"
+                        style={{
+                            fontSize: "1.2rem",
+                            color: "#333",
+                            fontStyle: "italic",
+                        }}
+                    >
+                        "Gran calidad de productos y servicio, siempre mi tienda favorita
+                        para encontrar vinilos raros."
+                    </p>
+                    <footer
+                        className="blockquote-footer mt-3"
+                        style={{ fontSize: "0.9rem", color: "#6c757d" }}
+                    >
+                        Juan Pérez
+                    </footer>
+                </div>
+            </div>
+        </div>
+        <div className="col-md-4 mb-4">
+            <div
+                className="card border-0 shadow-lg h-100"
+                style={{
+                    transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                    borderRadius: "8px",
+                }}
+                onMouseOver={(e) => {
+                    e.currentTarget.style.transform = "scale(1.05)";
+                    e.currentTarget.style.boxShadow =
+                        "0 8px 20px rgba(0, 0, 0, 0.2)";
+                }}
+                onMouseOut={(e) => {
+                    e.currentTarget.style.transform = "scale(1)";
+                    e.currentTarget.style.boxShadow =
+                        "0 4px 10px rgba(0, 0, 0, 0.1)";
+                }}
+            >
+                <div className="card-body text-center" style={{ padding: "30px 20px" }}>
+                    <p
+                        className="card-text"
+                        style={{
+                            fontSize: "1.2rem",
+                            color: "#333",
+                            fontStyle: "italic",
+                        }}
+                    >
+                        "Me encanta la variedad que tienen, siempre encuentro algo que me
+                        gusta. ¡Muy recomendado!"
+                    </p>
+                    <footer
+                        className="blockquote-footer mt-3"
+                        style={{ fontSize: "0.9rem", color: "#6c757d" }}
+                    >
+                        María García
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>     
             </div>
         );
     }
