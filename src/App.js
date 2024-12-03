@@ -29,7 +29,7 @@ function App() {
       }
       return [...prevCart, { ...product, quantity: 1 }];
     });
-    alert(`${product.title} ha sido agregado al carrito!`);
+    alert(`${product.title} ha sido agregado al carrito! `);
   };
 
   const addToWishlist = (product) => {
